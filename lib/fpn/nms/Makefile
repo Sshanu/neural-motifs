@@ -1,4 +1,4 @@
-all: src/cuda/nms.cu.o
+ll: src/cuda/nms.cu.o
 	python build.py
 
 src/cuda/nms.cu.o: src/cuda/nms_kernel.cu

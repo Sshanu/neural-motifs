@@ -16,9 +16,11 @@ if torch.cuda.is_available():
     with_cuda = True
 
 this_file = os.path.dirname(os.path.realpath(__file__))
+print("this file")
 print(this_file)
 extra_objects = ['src/cuda/nms.cu.o']
 extra_objects = [os.path.join(this_file, fname) for fname in extra_objects]
+print("extra", extra_objects)
 
 ffi = create_extension(
     '_ext.nms',
@@ -29,7 +31,7 @@ ffi = create_extension(
     with_cuda=with_cuda,
     extra_objects=extra_objects
 )
-
+print("ffi")
 if __name__ == '__main__':
     ffi.build()
 
